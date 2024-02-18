@@ -1,6 +1,5 @@
 package com.bt.studios.apps.google_phone_number_hint_flutter.google_phone_number_hint_flutter
 
-import android.app.Activity
 import android.app.PendingIntent
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -13,29 +12,28 @@ import io.flutter.plugin.common.MethodChannel
 
 class PhoneHintMethodChannelHandler(private val activity: ComponentActivity) :
     MethodChannel.MethodCallHandler {
-    private lateinit var phoneNumber: String
+    private lateinit var channelResult: MethodChannel.Result
     private val request: GetPhoneNumberHintIntentRequest =
         GetPhoneNumberHintIntentRequest.builder().build()
     private val phoneNumberHintIntentResultLauncher = activity.registerForActivityResult(
         ActivityResultContracts.StartIntentSenderForResult()
     ) { result ->
         try {
-            phoneNumber = Identity.getSignInClient(activity).getPhoneNumberFromIntent(result.data)
+            val phoneNumber = Identity.getSignInClient(activity).getPhoneNumberFromIntent(result.data)
+            channelResult.success(phoneNumber)
         } catch (e: Exception) {
             Log.e(TAG, "Phone Number Hint failed")
         }
     }
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
+        channelResult = result
         when (call.method) {
             "getPhoneNumberHint" -> {
                 requestPhoneHint()
-
-                result.success(phoneNumber)
             }
-
             else -> {
-                result.notImplemented()
+                channelResult.notImplemented()
             }
         }
     }
