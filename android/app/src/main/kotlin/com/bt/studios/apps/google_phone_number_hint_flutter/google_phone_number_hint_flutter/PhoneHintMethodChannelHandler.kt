@@ -22,7 +22,7 @@ class PhoneHintMethodChannelHandler(private val activity: ComponentActivity) :
             val phoneNumber = Identity.getSignInClient(activity).getPhoneNumberFromIntent(result.data)
             channelResult.success(phoneNumber)
         } catch (e: Exception) {
-            Log.e(TAG, "Phone Number Hint failed")
+            Log.e(TAG, "Phone Number Hint failed: ${e.stackTrace}")
         }
     }
 
@@ -51,7 +51,7 @@ class PhoneHintMethodChannelHandler(private val activity: ComponentActivity) :
                 }
             }
             .addOnFailureListener {
-                Log.e(TAG, "Phone Number Hint failed")
+                Log.e(TAG, "Phone Number Hint failed ${it.stackTrace}")
             }
     }
 
