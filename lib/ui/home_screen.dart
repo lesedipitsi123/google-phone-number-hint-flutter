@@ -21,21 +21,29 @@ class HomeScreen extends StatelessWidget {
                 color: Theme.of(context).colorScheme.onBackground,
                 fontWeight: FontWeight.w500)),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {},
+          icon: Icon(Icons.check_circle_outline,
+              size: 18.0, color: Theme.of(context).colorScheme.inverseSurface),
+          label: Text("Finish",
+              style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.inverseSurface,
+                  fontWeight: FontWeight.w500))),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
                 children: [
                   Icon(Icons.info_outline,
-                      size: 24,
+                      size: 18.0,
                       color: Theme.of(context).colorScheme.inverseSurface),
                   spacerRow8px,
-                  Text("Note: this works only on Android",
-                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  Text("Please enter a phone number",
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
                           color: Theme.of(context).colorScheme.inverseSurface,
                           fontWeight: FontWeight.normal))
                 ],
