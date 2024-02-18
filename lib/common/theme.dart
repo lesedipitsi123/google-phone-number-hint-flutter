@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_phone_number_hint_flutter/common/colors.dart';
+import 'package:google_phone_number_hint_flutter/gen/fonts.gen.dart';
 
 class AppTheme {
   static ThemeData light = _base.copyWith(
@@ -19,7 +20,7 @@ class AppTheme {
           statusBarBrightness: Brightness.light,
         )),
     dividerTheme:
-    const DividerThemeData(thickness: 0.8, color: Color(0xfff5f6f8)),
+        const DividerThemeData(thickness: 0.8, color: Color(0xfff5f6f8)),
     tabBarTheme: const TabBarTheme(
       dividerHeight: 0.0,
       indicatorSize: TabBarIndicatorSize.tab,
@@ -54,19 +55,19 @@ class AppTheme {
             fontWeight: FontWeight.w600,
             fontSize: 12.0,
             color: Color(0xff1A1B1E)))),
-      bottomSheetTheme: const BottomSheetThemeData(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(12.0),
-            ),
+    bottomSheetTheme: const BottomSheetThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(12.0),
           ),
-          backgroundColor: Colors.white,
-          modalElevation: 0.0,
-          modalBackgroundColor: Colors.white,
-          elevation: 0.0),
+        ),
+        backgroundColor: Colors.white,
+        modalElevation: 0.0,
+        modalBackgroundColor: Colors.white,
+        elevation: 0.0),
     scaffoldBackgroundColor: const Color(0x0fffffff),
-      colorScheme: AppColors.lightScheme,
-);
+    colorScheme: AppColors.lightScheme,
+  );
 
   static ThemeData dark = _base.copyWith(
       brightness: Brightness.dark,
@@ -83,7 +84,7 @@ class AppTheme {
             statusBarBrightness: Brightness.dark,
           )),
       dividerTheme:
-      const DividerThemeData(thickness: 0.8, color: Color(0xff22252A)),
+          const DividerThemeData(thickness: 0.8, color: Color(0xff22252A)),
       tabBarTheme: const TabBarTheme(
         dividerHeight: 0.0,
         indicatorSize: TabBarIndicatorSize.tab,
@@ -128,8 +129,6 @@ class AppTheme {
       scaffoldBackgroundColor: const Color(0xff121317),
       colorScheme: AppColors.darkScheme);
 
-  static final ThemeData _base = ThemeData(
-      useMaterial3: false,
-      splashColor: Colors.transparent,
-      highlightColor: Colors.transparent);
+  static final ThemeData _base =
+      ThemeData(useMaterial3: true, fontFamily: FontFamily.roboto);
 }
