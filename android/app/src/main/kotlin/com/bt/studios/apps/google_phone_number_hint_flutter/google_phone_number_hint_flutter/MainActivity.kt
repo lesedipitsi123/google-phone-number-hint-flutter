@@ -1,7 +1,5 @@
 package com.bt.studios.apps.google_phone_number_hint_flutter.google_phone_number_hint_flutter
 
-import androidx.activity.ComponentActivity
-import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
