@@ -3,12 +3,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_phone_number_hint_flutter/gen/assets.gen.dart';
 
 class GooglePhoneHintButton extends StatelessWidget {
-  const GooglePhoneHintButton({super.key});
+  const GooglePhoneHintButton({super.key, required this.onPress,});
 
+  final Function() onPress;
   @override
   Widget build(BuildContext context) {
     return OutlinedButton.icon(
-      onPressed: null,
+      onPressed: onPress,
       style: ButtonStyle(
           side: MaterialStateProperty.all(
               BorderSide(color: Theme.of(context).colorScheme.outline)),

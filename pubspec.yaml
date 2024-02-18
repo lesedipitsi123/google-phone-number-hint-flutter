@@ -1,6 +1,6 @@
 name: google_phone_number_hint_flutter
 
-description: "Application to showcase the the phone number hint provided by Google"
+description: "Flutter app to showcase the the phone number hint provided by Google"
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
