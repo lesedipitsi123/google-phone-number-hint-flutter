@@ -8,6 +8,7 @@ import io.flutter.plugin.common.MethodChannel
 class MainActivity : FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        handlePhoneHintMethodChannel(flutterEngine)
     }
 
     private fun handlePhoneHintMethodChannel(flutterEngine: FlutterEngine) {
