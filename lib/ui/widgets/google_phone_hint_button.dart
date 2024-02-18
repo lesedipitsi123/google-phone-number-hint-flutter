@@ -12,7 +12,7 @@ class GooglePhoneHintButton extends StatelessWidget {
       onPressed: onPress,
       style: ButtonStyle(
           side: MaterialStateProperty.all(
-              BorderSide(color: Theme.of(context).colorScheme.outline)),
+              BorderSide(color: Theme.of(context).colorScheme.outlineVariant)),
           padding: MaterialStateProperty.all(const EdgeInsets.all(16.0)),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0)))),
