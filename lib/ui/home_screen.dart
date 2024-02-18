@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         title: Text("Google Phone Hint",
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -22,9 +23,9 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Row(
@@ -48,11 +49,10 @@ class HomeScreen extends StatelessWidget {
                 onPress: () async {
                   try {
                     String? phoneNumberHint = await const MethodChannel(
-                            'com.bt.studios.drip.carwash.drip_car_wash/phone_hint')
+                            'com.bt.studios.apps.google_phone_number_hint_flutter.google_phone_number_hint_flutter/phone_hint')
                         .invokeMethod('getPhoneNumberHint');
 
                     textInputController.text = phoneNumberHint ?? "-----";
-
                   } on PlatformException catch (e) {
                     dev.log(e.message ?? "");
                   }
