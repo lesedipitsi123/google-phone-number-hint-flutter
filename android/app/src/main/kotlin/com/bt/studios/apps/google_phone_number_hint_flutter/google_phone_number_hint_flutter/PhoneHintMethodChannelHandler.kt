@@ -51,7 +51,7 @@ class PhoneHintMethodChannelHandler(private val activity: ComponentActivity) :
                 }
             }
             .addOnFailureListener {
-                Log.e(TAG, "Phone Number Hint failed ${it.stackTrace}")
+                Log.e(TAG, "Phone Number Hint failed ${it.message}")
             }
     }
 
