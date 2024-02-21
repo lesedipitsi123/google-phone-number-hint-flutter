@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_phone_number_hint_flutter/bloc/phone_hint_cubit.dart';
 import 'package:google_phone_number_hint_flutter/common/dimens.dart';
 import 'package:google_phone_number_hint_flutter/ui/widgets/google_phone_hint_button.dart';
-import 'package:google_phone_number_hint_flutter/ui/widgets/phone_number_field.dart';
+import 'package:google_phone_number_hint_flutter/ui/widgets/text_input_phone_number.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
@@ -45,7 +45,7 @@ class HomeView extends StatelessWidget {
               builder: (context, state) {
                 textInputController.text = state;
 
-                return PhoneNumberField(
+                return TextInputPhoneNumber(
                   controller: textInputController,
                 );
               },
