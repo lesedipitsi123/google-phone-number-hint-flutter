@@ -20,14 +20,6 @@ class HomeView extends StatelessWidget {
                 color: Theme.of(context).colorScheme.onBackground,
                 fontWeight: FontWeight.w500)),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {},
-          icon: Icon(Icons.download_for_offline_outlined,
-              size: 18.0, color: Theme.of(context).colorScheme.inverseSurface),
-          label: Text("Download PDF",
-              style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.inverseSurface,
-                  fontWeight: FontWeight.w500))),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
